@@ -1,11 +1,10 @@
-export interface IBook{
-    id: number;
-    name: string;
-    pages: number;
-    category?: string;
-    createdAt: Date;
-    updatedAt: Date;
-}
+import { z } from "zod";
+import { bookArraySchema, bookCreateSchema, bookSchema, bookUpdateSchema } from "../schemas/books.schemas";
 
-export type TCreateBody = Omit<IBook, "id" | "createdAt" | "updatedAt">;
-export type TUpdateBody = Partial<TCreateBody>;
+export type TBook = z.infer<typeof bookSchema>;
+
+export type TCreateBody = z.infer<typeof bookCreateSchema>;
+
+export type TUpdateBody = z.infer<typeof bookUpdateSchema>;
+
+export type TBookArray = z.infer<typeof bookArraySchema>;

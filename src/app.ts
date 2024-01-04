@@ -1,8 +1,8 @@
+import "express-async-errors";
 import express, { json } from "express";
 import helmet from "helmet";
 import { booksRouter } from "./routes/books.routes";
 import { HandleErrors } from "./errors/handleErrors.middleware";
-import "express-async-errors";
 
 export const app = express();
 
