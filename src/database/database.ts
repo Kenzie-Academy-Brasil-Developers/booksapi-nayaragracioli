@@ -1,6 +1,6 @@
-import { IBook } from "../interfaces/books.interface";
+import { TBook } from "../interfaces/books.interface";
 
-export const booksDatabase: IBook[] = [];
+export const booksDatabase: TBook[] = [];
 
 let id = 0;
 

@@ -1,12 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { AnyZodObject } from "zod";
+import { IValidateRequest } from "../interfaces/books.interface";
 
-
-interface IValidateRequest {
-    params?: AnyZodObject;
-    body?: AnyZodObject;
-    query?: AnyZodObject;
-}
 
 export class ValidateRequest {
     static execute(schemas: IValidateRequest) {

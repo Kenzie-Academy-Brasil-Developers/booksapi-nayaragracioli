@@ -22,7 +22,12 @@ export class BooksControllers implements IBooksControllers{
     }
 
     getMany(req: Request, res: Response): Response{
-        return res.status(200).json(booksDatabase);
+        const bookSearch = req.query.search as string | undefined;
+
+        const booksServices = new BooksServices;
+        const getMany = booksServices.getMany(bookSearch)
+
+        return res.status(200).json(getMany);
     }
 
     getOne(req: Request, res: Response): Response{
